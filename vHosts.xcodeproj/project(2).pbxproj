@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73852DA1B3736D900232331 /* AppDelegate.swift */; };
+		A73852DD1B3736D900232331 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73852DC1B3736D900232331 /* ViewController.swift */; };
+		A73852DF1B3736D900232331 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73852DE1B3736D900232331 /* Images.xcassets */; };
+		A73852E21B3736D900232331 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A73852E01B3736D900232331 /* Main.storyboard */; };
+		A73852EE1B3736D900232331 /* vHostsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73852ED1B3736D900232331 /* vHostsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A73852E81B3736D900232331 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A73852CD1B3736D800232331 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A73852D41B3736D800232331;
+			remoteInfo = vHosts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A73852D51B3736D900232331 /* vHosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vHosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73852D91B3736D900232331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A73852DA1B3736D900232331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A73852DC1B3736D900232331 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A73852DE1B3736D900232331 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A73852E11B3736D900232331 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A73852E71B3736D900232331 /* vHostsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vHostsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A73852EC1B3736D900232331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A73852ED1B3736D900232331 /* vHostsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vHostsTests.swift; sourceTree = "<group>"; };
+		A73852F81B375B6A00232331 /* vHosts-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vHosts-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A73852D21B3736D800232331 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73852E41B3736D900232331 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A73852CC1B3736D800232331 = {
+			isa = PBXGroup;
+			children = (
+				A73852D71B3736D900232331 /* vHosts */,
+				A73852EA1B3736D900232331 /* vHostsTests */,
+				A73852D61B3736D900232331 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A73852D61B3736D900232331 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A73852D51B3736D900232331 /* vHosts.app */,
+				A73852E71B3736D900232331 /* vHostsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A73852D71B3736D900232331 /* vHosts */ = {
+			isa = PBXGroup;
+			children = (
+				A73852DA1B3736D900232331 /* AppDelegate.swift */,
+				A73852DC1B3736D900232331 /* ViewController.swift */,
+				A73852DE1B3736D900232331 /* Images.xcassets */,
+				A73852E01B3736D900232331 /* Main.storyboard */,
+				A73852D81B3736D900232331 /* Supporting Files */,
+				A73852F81B375B6A00232331 /* vHosts-Bridging-Header.h */,
+			);
+			path = vHosts;
+			sourceTree = "<group>";
+		};
+		A73852D81B3736D900232331 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A73852D91B3736D900232331 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A73852EA1B3736D900232331 /* vHostsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A73852ED1B3736D900232331 /* vHostsTests.swift */,
+				A73852EB1B3736D900232331 /* Supporting Files */,
+			);
+			path = vHostsTests;
+			sourceTree = "<group>";
+		};
+		A73852EB1B3736D900232331 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A73852EC1B3736D900232331 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A73852D41B3736D800232331 /* vHosts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A73852F11B3736D900232331 /* Build configuration list for PBXNativeTarget "vHosts" */;
+			buildPhases = (
+				A73852D11B3736D800232331 /* Sources */,
+				A73852D21B3736D800232331 /* Frameworks */,
+				A73852D31B3736D800232331 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vHosts;
+			productName = vHosts;
+			productReference = A73852D51B3736D900232331 /* vHosts.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A73852E61B3736D900232331 /* vHostsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A73852F41B3736D900232331 /* Build configuration list for PBXNativeTarget "vHostsTests" */;
+			buildPhases = (
+				A73852E31B3736D900232331 /* Sources */,
+				A73852E41B3736D900232331 /* Frameworks */,
+				A73852E51B3736D900232331 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A73852E91B3736D900232331 /* PBXTargetDependency */,
+			);
+			name = vHostsTests;
+			productName = vHostsTests;
+			productReference = A73852E71B3736D900232331 /* vHostsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A73852CD1B3736D800232331 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Giuseppe Salvo";
+				TargetAttributes = {
+					A73852D41B3736D800232331 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					A73852E61B3736D900232331 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = A73852D41B3736D800232331;
+					};
+				};
+			};
+			buildConfigurationList = A73852D01B3736D800232331 /* Build configuration list for PBXProject "vHosts" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A73852CC1B3736D800232331;
+			productRefGroup = A73852D61B3736D900232331 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A73852D41B3736D800232331 /* vHosts */,
+				A73852E61B3736D900232331 /* vHostsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A73852D31B3736D800232331 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73852DF1B3736D900232331 /* Images.xcassets in Resources */,
+				A73852E21B3736D900232331 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73852E51B3736D900232331 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A73852D11B3736D800232331 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73852DD1B3736D900232331 /* ViewController.swift in Sources */,
+				A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A73852E31B3736D900232331 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A73852EE1B3736D900232331 /* vHostsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A73852E91B3736D900232331 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A73852D41B3736D800232331 /* vHosts */;
+			targetProxy = A73852E81B3736D900232331 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A73852E01B3736D900232331 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A73852E11B3736D900232331 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A73852EF1B3736D900232331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A73852F01B3736D900232331 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A73852F21B3736D900232331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = vHosts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "vHosts/vHosts-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A73852F31B3736D900232331 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = vHosts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "vHosts/vHosts-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		A73852F51B3736D900232331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = vHostsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/vHosts.app/Contents/MacOS/vHosts";
+			};
+			name = Debug;
+		};
+		A73852F61B3736D900232331 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = vHostsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/vHosts.app/Contents/MacOS/vHosts";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A73852D01B3736D800232331 /* Build configuration list for PBXProject "vHosts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73852EF1B3736D900232331 /* Debug */,
+				A73852F01B3736D900232331 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A73852F11B3736D900232331 /* Build configuration list for PBXNativeTarget "vHosts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73852F21B3736D900232331 /* Debug */,
+				A73852F31B3736D900232331 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A73852F41B3736D900232331 /* Build configuration list for PBXNativeTarget "vHostsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A73852F51B3736D900232331 /* Debug */,
+				A73852F61B3736D900232331 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A73852CD1B3736D800232331 /* Project object */;
+}
