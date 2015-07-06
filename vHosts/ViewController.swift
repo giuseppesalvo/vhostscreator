@@ -8,21 +8,68 @@
 
 import Cocoa
 import Foundation
+import QuartzCore
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, NSTextFieldDelegate {
 
     
+    @IBOutlet weak var titlelbl: NSTextField!
     @IBOutlet weak var serverName: NSTextField!
     @IBOutlet weak var serverAdmin: NSTextField!
     @IBOutlet weak var documentRootLabel: NSTextField!
+    @IBOutlet weak var browseDirBtn: NSButton!
+
+    @IBOutlet weak var btnCreate: NSButton!
     
     let hostsFile  = "/etc/hosts"
     let vhostsFile = "/etc/apache2/extra/httpd-vhosts.conf"
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        
+        var window : NSWindow? = self.view.window
+        
+        window?.titleVisibility = .Hidden
+        window?.titlebarAppearsTransparent = true
+        window?.movableByWindowBackground = true
+        
     }
     
+    func setTextStyle( text : NSTextField... ) {
+        
+        for t in text {
+            t.focusRingType = .None
+        }
+    
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       // buttonCreate.layer.co
+        btnCreate.layer?.cornerRadius = 8.0
+        btnCreate.layer?.masksToBounds = true
+        btnCreate.layer?.borderWidth = 4
+        btnCreate.layer?.borderColor = NSColor.whiteColor().CGColor
+        btnCreate.wantsLayer = true
+        
+        let pstyle = NSMutableParagraphStyle()
+        pstyle.alignment = .CenterTextAlignment
+        
+        let font = NSFont(name: "Courier New Bold", size: 14 )
+        
+         btnCreate.attributedTitle = NSAttributedString(string: btnCreate.title,
+            attributes: [
+                NSForegroundColorAttributeName : titlelbl.textColor!,
+                NSParagraphStyleAttributeName : pstyle,
+                NSFontAttributeName : font!
+            ])
+
+
+        setTextStyle( serverName, serverAdmin, documentRootLabel )
+      
+    }
     
     //Class for read and check files
     class File {
@@ -86,7 +133,28 @@ class ViewController: NSViewController {
         return false
     }
     
+     @IBAction func browseDirectory(sender: AnyObject) {
+        
+        var openPanel = NSOpenPanel()
+        openPanel.allowsMultipleSelection = false
+        openPanel.canChooseDirectories = true
+        openPanel.canCreateDirectories = true
+        openPanel.canChooseFiles = false
+        
+        openPanel.beginWithCompletionHandler { (result) -> Void in
+            if result == NSFileHandlingPanelOKButton {
+        
+                let url = openPanel.URL?.path
+                
+                self.documentRootLabel.stringValue = url!
+                
+            }
+        }
+        
+    }
+    
     @IBAction func buttonAction(sender: AnyObject) {
+        
         
         var name  = serverName.stringValue.lowercaseString
         var admin = serverAdmin.stringValue.lowercaseString

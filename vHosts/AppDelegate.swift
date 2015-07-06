@@ -24,11 +24,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
-    override func awakeFromNib() {
-    
-    
+    //Quit application on window close
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        return true
     }
-
-
+    
 }
 
