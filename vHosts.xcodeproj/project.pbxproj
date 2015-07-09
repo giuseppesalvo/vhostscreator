@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C39DC2B1B4EB3A500ECE139 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2A1B4EB3A500ECE139 /* InterfaceController.swift */; };
+		9C39DC2D1B4EB42100ECE139 /* ScriptsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2C1B4EB42100ECE139 /* ScriptsController.swift */; };
 		A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73852DA1B3736D900232331 /* AppDelegate.swift */; };
 		A73852DD1B3736D900232331 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73852DC1B3736D900232331 /* ViewController.swift */; };
 		A73852DF1B3736D900232331 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73852DE1B3736D900232331 /* Images.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C39DC2A1B4EB3A500ECE139 /* InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		9C39DC2C1B4EB42100ECE139 /* ScriptsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptsController.swift; sourceTree = "<group>"; };
 		A73852D51B3736D900232331 /* vHosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vHosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A73852D91B3736D900232331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73852DA1B3736D900232331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			children = (
 				A73852DA1B3736D900232331 /* AppDelegate.swift */,
 				A73852DC1B3736D900232331 /* ViewController.swift */,
+				9C39DC2C1B4EB42100ECE139 /* ScriptsController.swift */,
+				9C39DC2A1B4EB3A500ECE139 /* InterfaceController.swift */,
 				A73852DE1B3736D900232331 /* Images.xcassets */,
 				A73852E01B3736D900232331 /* Main.storyboard */,
 				A73852D81B3736D900232331 /* Supporting Files */,
@@ -211,7 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A73852DD1B3736D900232331 /* ViewController.swift in Sources */,
+				9C39DC2B1B4EB3A500ECE139 /* InterfaceController.swift in Sources */,
 				A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */,
+				9C39DC2D1B4EB42100ECE139 /* ScriptsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +415,7 @@
 				A73852F31B3736D900232331 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A73852F41B3736D900232331 /* Build configuration list for PBXNativeTarget "vHostsTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +424,7 @@
 				A73852F61B3736D900232331 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
