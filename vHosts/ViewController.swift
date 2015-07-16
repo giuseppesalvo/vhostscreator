@@ -14,16 +14,16 @@ class ViewController: NSViewController, NSTextFieldDelegate {
 
     
     // - - - - - - - - - - - - -
-    // @ Parameters
+    // MARK: Parameters
     // - - - - - - - - - - - - -
     
     // View Elements
-    @IBOutlet weak var titlelbl: NSTextField!
-    @IBOutlet weak var serverName: NSTextField!
-    @IBOutlet weak var serverAdmin: NSTextField!
-    @IBOutlet weak var documentRootLabel: NSTextField!
-    @IBOutlet weak var browseDirBtn: NSButton!
-    @IBOutlet weak var btnCreate: NSButton!
+    @IBOutlet weak var titlelbl          : NSTextField!
+    @IBOutlet weak var serverName        : NSTextField!
+    @IBOutlet weak var serverAdmin       : NSTextField!
+    @IBOutlet weak var documentRootLabel : NSTextField!
+    @IBOutlet weak var browseDirBtn      : NSButton!
+    @IBOutlet weak var btnCreate         : NSButton!
     
     // Paths of file
     let hostsFile  = "/etc/hosts"
@@ -35,7 +35,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     
     // - - - - - - - - - - - - -
-    // @ App load
+    // MARK: App load
     // - - - - - - - - - - - - -
     
     override func viewDidLoad() {
@@ -45,8 +45,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         Interface.text( serverName, serverAdmin, documentRootLabel )
     }
     
-    // @ On Appear - - - - - - - - -
-    
+    // - - - - - - - - - - - - -
+    // MARK: On Appear
+    // - - - - - - - - - - - - -
     override func viewDidAppear() {
         super.viewDidAppear()
         
@@ -55,13 +56,19 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         Interface.window( window! )
     }
     
-     @IBAction func browseDirectory(sender: AnyObject) {
+    
+    // - - - - - - - - - - - - -
+    // MARK: browseDirectory
+    // - - - - - - - - - - - - -
+    
+    @IBAction func browseDirectory(sender: AnyObject) {
         
         var openPanel = NSOpenPanel()
-        openPanel.allowsMultipleSelection = false
-        openPanel.canChooseDirectories = true
-        openPanel.canCreateDirectories = true
-        openPanel.canChooseFiles = false
+        
+        openPanel.allowsMultipleSelection  = false
+        openPanel.canChooseDirectories     = true
+        openPanel.canCreateDirectories     = true
+        openPanel.canChooseFiles           = false
         
         openPanel.beginWithCompletionHandler { (result) -> Void in
             if result == NSFileHandlingPanelOKButton {
@@ -75,6 +82,10 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         
     }
     
+    
+    // - - - - - - - - - - - - -
+    // MARK: Create vHost
+    // - - - - - - - - - - - - -
     @IBAction func buttonAction(sender: AnyObject) {
         
         var name  = serverName.stringValue.lowercaseString
