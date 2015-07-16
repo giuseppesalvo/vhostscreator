@@ -1,6 +1,8 @@
 # vHosts Creator
 Mac utility for easy and fast apache virtual hosts creation
 
+[Download](https://giuseppesalvo.github.io/vhostscreator)
+
 ![vHosts Creator ScreenShot](https://raw.githubusercontent.com/giuseppesalvo/vhostscreator/master/screenshot.png)
 
 ## How it works
