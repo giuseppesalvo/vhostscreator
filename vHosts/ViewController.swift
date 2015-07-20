@@ -24,6 +24,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var documentRootLabel : NSTextField!
     @IBOutlet weak var browseDirBtn      : NSButton!
     @IBOutlet weak var btnCreate         : NSButton!
+    @IBOutlet weak var portText: NSTextField!
     
     // Paths of file
     let hostsFile  = "/etc/hosts"
@@ -42,7 +43,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidLoad()
         
         Interface.button( btnCreate )
-        Interface.text( serverName, serverAdmin, documentRootLabel )
+        Interface.text( serverName, serverAdmin, documentRootLabel, portText )
     }
     
     // - - - - - - - - - - - - -
@@ -95,7 +96,15 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         if name != "" && admin != "" && root != ""
         {
             
-            let vhost : String = "\n\n# \(name.uppercaseString)\n<VirtualHost *:80>\n\tServerAdmin \(admin)\n\tDocumentRoot '\(root)'\n\tServerName \(name)\n\tServerAlias www.\(name)\n\tErrorLog '/private/var/log/apache2/\(name)-error_log'\n\tCustomLog '/private/var/log/apache2/\(name)-access_log' comm$\n</VirtualHost>"
+            var port = ""
+            
+            if portText.stringValue != "" && portText.stringValue != "80" {
+                port = String( portText.integerValue )
+                port = "\n\tProxyPreserveHost On\n\tProxyPass / http://localhost:\(port)/\n\tProxyPassReverse / http://localhost:\(port)/\n\n"
+            }
+            
+            
+            let vhost : String = "\n\n# \(name.uppercaseString)\n<VirtualHost *:80>\n\tServerAdmin \(admin)\n\tDocumentRoot '\(root)'\n\tServerName \(name)\n\tServerAlias www.\(name)\n\tErrorLog '/private/var/log/apache2/\(name)-error_log'\n\tCustomLog '/private/var/log/apache2/\(name)-access_log' comm$\n\(port)</VirtualHost>"
             let hosts = "\n\n# \(name.uppercaseString)\n127.0.0.1\t\(name) www.\(name)"
             
             if Scripts.run( Scripts.getAppend(vhost, pathFile: vhostsFile),
