@@ -10,12 +10,11 @@ import Cocoa
 import Foundation
 import QuartzCore
 
-class InterfaceController {
+class UIController {
     
     let currentFont : String  = "Courier New Bold"
     let fontSize    : CGFloat = 14.0
     let textColor   : NSColor = NSColor(red:120/255, green: 140/255, blue: 200/255, alpha: 1)
-    
     
     //Set window style
     func window( window : NSWindow... ) {
@@ -25,6 +24,7 @@ class InterfaceController {
             w.titleVisibility = .Hidden
             w.titlebarAppearsTransparent = true
             w.movableByWindowBackground = true
+            w.backgroundColor = NSColor.whiteColor()
         }
    
     }
@@ -58,6 +58,29 @@ class InterfaceController {
         }
     }
     
+    //Set styles for all buttons
+    func styleButton( button : NSButton, cornerRadius : CGFloat, borderWidth : CGFloat, background: Bool, whiteText: Bool   ) {
+        
+        let pstyle = NSMutableParagraphStyle()
+        pstyle.alignment = NSTextAlignment.Center
+ 
+        
+        button.wantsLayer = true
+        button.layer?.cornerRadius = cornerRadius
+        button.layer?.borderWidth = borderWidth
+        button.layer?.borderColor = self.textColor.CGColor
+        if background {
+            button.layer?.backgroundColor = self.textColor.CGColor
+        }
+        
+        let textColor : NSColor = ( whiteText ? NSColor.whiteColor() : self.textColor )
+        
+        let coloredTitle = NSMutableAttributedString( attributedString: button.attributedTitle )
+        let range : NSRange = NSMakeRange(0, coloredTitle.length )
+        coloredTitle.addAttribute(NSForegroundColorAttributeName, value: textColor, range: range)
+        button.attributedTitle = coloredTitle
+        
+    }
     
     // Create dialog box on screen
     func popup(question: String, text: String) -> Bool {

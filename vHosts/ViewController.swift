@@ -10,7 +10,7 @@ import Cocoa
 import Foundation
 import QuartzCore
 
-class ViewController: NSViewController, NSTextFieldDelegate {
+class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate, NSTableViewDataSource {
 
     
     // - - - - - - - - - - - - -
@@ -26,12 +26,15 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     @IBOutlet weak var btnCreate         : NSButton!
     @IBOutlet weak var portText: NSTextField!
     
+    
+    @IBOutlet var HostsTableView: NSTableView!
+    
     // Paths of file
     let hostsFile  = "/etc/hosts"
     let vhostsFile = "/etc/apache2/extra/httpd-vhosts.conf"
     
     // Classes
-    let Interface = InterfaceController()
+    let UI = UIController()
     let Scripts   = ScriptsController()
     
     
@@ -42,8 +45,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Interface.button( btnCreate )
-        Interface.text( serverName, serverAdmin, documentRootLabel, portText )
+        UI.styleButton(btnCreate, cornerRadius: 4, borderWidth: 0, background: true, whiteText: true)
+        UI.styleButton(browseDirBtn, cornerRadius: browseDirBtn.frame.size.height/2, borderWidth: 1, background: false, whiteText: false)
+        UI.text( serverName, serverAdmin, documentRootLabel, portText )
     }
     
     // - - - - - - - - - - - - -
@@ -54,7 +58,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         
         //Get current window
         let window : NSWindow? = self.view.window
-        Interface.window( window! )
+        UI.window( window! )
     }
     
     
@@ -111,22 +115,57 @@ class ViewController: NSViewController, NSTextFieldDelegate {
                             Scripts.getAppend(hosts, pathFile: hostsFile),
                             "apachectl restart" )
             {
-                Interface.popup("Success", text: "Virtual host created")
+                UI.popup("Success", text: "Virtual host created")
             }
             else
             {
-                 Interface.popup( "Error", text: "Error while creating virtual host" )
+                 UI.popup( "Error", text: "Error while creating virtual host" )
             }
         
         }
         else
         {
-            Interface.popup("Error", text: "There are empty fields!")
+            UI.popup("Error", text: "There are empty fields!")
         }
-        
-        
-       
     }
+    
+    //
+    // Table View's delegate
+    //
+    
+    let tableArray:[String] = [ "Hi", "Hello", "Ciao" ]
+    
+    func numberOfRowsInTableView(aTableView: NSTableView) -> Int
+    {
+        let numberOfRows : Int = self.tableArray.count
+        return numberOfRows
+    }
+    
+    func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        
+        let cell : CustomCell = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! CustomCell
+        cell.title.stringValue = self.tableArray[ row ]
+        return cell
+    }
+    
+    func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject?
+    {
+        let newString = self.tableArray[ row ]
+        return newString
+    }
+    
+    func tableView(tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
+        let myCustomView = CustomRowSelection()
+        return myCustomView
+    }
+    
+    func tableView(tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
+        return 48
+    }
+    
+    //
+    // END TABLE VIEW
+    //
 
     override var representedObject: AnyObject? {
         didSet {
