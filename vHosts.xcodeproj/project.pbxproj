@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5D0E7D8B1C16EB4C00B59E9B /* CustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E7D8A1C16EB4C00B59E9B /* CustomRow.swift */; };
 		5D0E7D8D1C16F89600B59E9B /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E7D8C1C16F89600B59E9B /* Command.swift */; };
+		5D0E7D921C17039500B59E9B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E7D901C17039500B59E9B /* Realm.framework */; };
+		5D0E7D931C17039500B59E9B /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E7D901C17039500B59E9B /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5D0E7D941C17039500B59E9B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E7D911C17039500B59E9B /* RealmSwift.framework */; };
+		5D0E7D951C17039500B59E9B /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E7D911C17039500B59E9B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5D0E7D981C17049800B59E9B /* VhostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E7D971C17049800B59E9B /* VhostModel.swift */; };
 		9C39DC2B1B4EB3A500ECE139 /* UIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2A1B4EB3A500ECE139 /* UIController.swift */; };
 		9C39DC2D1B4EB42100ECE139 /* ScriptsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2C1B4EB42100ECE139 /* ScriptsController.swift */; };
 		A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73852DA1B3736D900232331 /* AppDelegate.swift */; };
@@ -28,9 +33,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5D0E7D961C17039500B59E9B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5D0E7D951C17039500B59E9B /* RealmSwift.framework in Embed Frameworks */,
+				5D0E7D931C17039500B59E9B /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5D0E7D8A1C16EB4C00B59E9B /* CustomRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRow.swift; sourceTree = "<group>"; };
 		5D0E7D8C1C16F89600B59E9B /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		5D0E7D901C17039500B59E9B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		5D0E7D911C17039500B59E9B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		5D0E7D971C17049800B59E9B /* VhostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VhostModel.swift; sourceTree = "<group>"; };
 		9C39DC2A1B4EB3A500ECE139 /* UIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIController.swift; sourceTree = "<group>"; };
 		9C39DC2C1B4EB42100ECE139 /* ScriptsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptsController.swift; sourceTree = "<group>"; };
 		A73852D51B3736D900232331 /* vHosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vHosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D0E7D941C17039500B59E9B /* RealmSwift.framework in Frameworks */,
+				5D0E7D921C17039500B59E9B /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +88,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D0E7D991C17049D00B59E9B /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				5D0E7D971C17049800B59E9B /* VhostModel.swift */,
+			);
+			name = RealmModels;
+			sourceTree = "<group>";
+		};
 		A73852CC1B3736D800232331 = {
 			isa = PBXGroup;
 			children = (
+				5D0E7D901C17039500B59E9B /* Realm.framework */,
+				5D0E7D911C17039500B59E9B /* RealmSwift.framework */,
 				A73852D71B3736D900232331 /* vHosts */,
 				A73852EA1B3736D900232331 /* vHostsTests */,
 				A73852D61B3736D900232331 /* Products */,
@@ -84,6 +119,7 @@
 		A73852D71B3736D900232331 /* vHosts */ = {
 			isa = PBXGroup;
 			children = (
+				5D0E7D991C17049D00B59E9B /* RealmModels */,
 				A73852DA1B3736D900232331 /* AppDelegate.swift */,
 				A73852DC1B3736D900232331 /* ViewController.swift */,
 				5D0E7D8C1C16F89600B59E9B /* Command.swift */,
@@ -133,6 +169,7 @@
 				A73852D11B3736D800232331 /* Sources */,
 				A73852D21B3736D800232331 /* Frameworks */,
 				A73852D31B3736D800232331 /* Resources */,
+				5D0E7D961C17039500B59E9B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +263,7 @@
 				5D0E7D8B1C16EB4C00B59E9B /* CustomRow.swift in Sources */,
 				A73852DD1B3736D900232331 /* ViewController.swift in Sources */,
 				9C39DC2B1B4EB3A500ECE139 /* UIController.swift in Sources */,
+				5D0E7D981C17049800B59E9B /* VhostModel.swift in Sources */,
 				A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */,
 				9C39DC2D1B4EB42100ECE139 /* ScriptsController.swift in Sources */,
 				5D0E7D8D1C16F89600B59E9B /* Command.swift in Sources */,
@@ -349,6 +387,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = vHosts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gsdeveloper.$(PRODUCT_NAME:rfc1034identifier)";
@@ -364,6 +406,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = vHosts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gsdeveloper.$(PRODUCT_NAME:rfc1034identifier)";

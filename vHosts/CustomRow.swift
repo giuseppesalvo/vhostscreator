@@ -21,8 +21,33 @@ class CustomRowSelection: NSTableRowView {
     }
 }
 
+@objc protocol CustomCellDelegate {
+    
+    optional func tableViewRowEdit( cell: CustomCell )
+    
+    optional func tableViewRowDelete( cell: CustomCell )
+
+}
+
 class CustomCell : NSTableCellView {
     
+    var delegate:CustomCellDelegate?
+    
     @IBOutlet var title: NSTextField!
+    @IBOutlet var EditButton: NSButton!
+    @IBOutlet var DeleteButton: NSButton!
+    
+    
+    @IBAction func EditAction(sender: AnyObject) {
+        
+        delegate?.tableViewRowEdit!( self )
+    
+    }
+    
+    @IBAction func DeleteAction(sender: AnyObject) {
+        
+        delegate?.tableViewRowDelete!( self )
+        
+    }
     
 }

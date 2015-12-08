@@ -10,7 +10,7 @@ import Cocoa
 import Foundation
 import QuartzCore
 
-class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate, NSTableViewDataSource {
+class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate, NSTableViewDataSource, CustomCellDelegate {
 
     
     // - - - - - - - - - - - - -
@@ -31,8 +31,6 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
     
     // Classes
     let UI = UIController()
-    let Scripts = ScriptsController()
-    
     
     // - - - - - - - - - - - - -
     // MARK: App load
@@ -107,13 +105,19 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
             
             let command = Command.get( name , serveradmin: admin, documentroot: root, port: port )
             
-            let scripts = [
-                Scripts.getAppend(command["vhost"]!, pathFile: Command.paths["vhosts"]!),
-                Scripts.getAppend(command["host"]! , pathFile: Command.paths["hosts"]!),
-                "apachectl restart"
-            ]
+            let result = VHost.addOrUpdate(
+                name,
+                serveradmin: admin,
+                documentroot: root,
+                port: port,
+                vhostText: command["vhosts"]!,
+                hostText: command["hosts"]!
+            )
             
-            if Scripts.run( scripts ) {
+            if result {
+                
+                reloadTable()
+                
                 UI.popup("Success", text: "Virtual host created")
             }
             else {
@@ -130,7 +134,12 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
     // Table View's delegate
     //
     
-    let tableArray:[String] = [ "Hi", "Hello", "Ciao" ]
+    var tableArray = VHost.all()
+    
+    func reloadTable () {
+        tableArray = VHost.all()
+        HostsTableView.reloadData()
+    }
     
     func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
         let numberOfRows : Int = self.tableArray.count
@@ -140,13 +149,37 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         let cell : CustomCell = tableView.makeViewWithIdentifier(tableColumn!.identifier, owner: self) as! CustomCell
-        cell.title.stringValue = self.tableArray[ row ]
+        cell.delegate = self
+        cell.title.stringValue = self.tableArray[ row ].servername
         return cell
+    }
+    
+    //
+    // CELL DELEGATES
+    //
+    
+    func tableViewRowEdit( cell: CustomCell ) {
+        
+        let current = VHost.get( cell.title.stringValue )
+        
+        serverName.stringValue = current.servername
+        serverAdmin.stringValue = current.serveradmin
+        documentRootLabel.stringValue = current.documentroot
+        portText.stringValue = current.port
+    }
+    
+    func tableViewRowDelete( cell: CustomCell ) {
+        if VHost.delete( cell.title.stringValue ) {
+            reloadTable()
+            UI.popup("Success", text: "Virtual Host deleted" )
+        } else {
+            UI.popup("Error", text: "Error while deleting Virtual Host" )
+        }
     }
     
     func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject?
     {
-        let newString = self.tableArray[ row ]
+        let newString = self.tableArray[ row ].servername
         return newString
     }
     
@@ -159,10 +192,6 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
         return 48
     }
     
-    //
-    // END TABLE VIEW
-    //
-
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.

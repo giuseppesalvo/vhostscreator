@@ -14,8 +14,8 @@ class Command {
     // MARK:PATHS
     //
     static let paths : [String:String] = [
-        "vhosts" : "/etc/hosts",
-        "hosts"  : "/etc/apache2/extra/httpd-vhosts.conf"
+        "vhosts" : "/etc/apache2/extra/httpd-vhosts.conf",
+        "hosts"  : "/etc/hosts"
     ]
     
     //
@@ -23,7 +23,7 @@ class Command {
     //
     static let formats : [String:String] = [
         
-        "vhosts" : "\n\n# {{servername}}\n<VirtualHost *:80>\n\tServerAdmin {{admin}}\n\tDocumentRoot '{{documentroot}}'\n\tServerName {{servername}}\n\tServerAlias www.{{servername}}\n\tErrorLog '/private/var/log/apache2/{{servername}}-error_log'\n\tCustomLog '/private/var/log/apache2/{{servername}}-access_log' comm$\n{{port}}</VirtualHost>",
+        "vhosts" : "\n\n# {{servername}}\n<VirtualHost *:80>\n\tServerAdmin {{admin}}\n\tDocumentRoot {{documentroot}}\n\tServerName {{servername}}\n\tServerAlias www.{{servername}}\n\tErrorLog /private/var/log/apache2/{{servername}}-error_log\n\tCustomLog /private/var/log/apache2/{{servername}}-access_log comm$\n{{port}}</VirtualHost>",
         
         "port" : "\n\tProxyPreserveHost On\n\tProxyPass / http://localhost:{{portnumber}}/\n\tProxyPassReverse / http://localhost:{{portnumber}}/\n\n",
         
@@ -49,7 +49,7 @@ class Command {
         var vhosts = formats["vhosts"]!
             .stringByReplacingOccurrencesOfString( selectors["servername"]! , withString: servername)
             .stringByReplacingOccurrencesOfString( selectors["admin"]!      , withString: serveradmin)
-            .stringByReplacingOccurrencesOfString( selectors["servername"]! , withString: documentroot)
+            .stringByReplacingOccurrencesOfString( selectors["documentroot"]! , withString: documentroot)
         
         if port != "" && port != "80" {
             
@@ -61,6 +61,9 @@ class Command {
             vhosts = vhosts
                 .stringByReplacingOccurrencesOfString( selectors["port"]!, withString: portString )
         
+        } else {
+            vhosts = vhosts
+                .stringByReplacingOccurrencesOfString( selectors["port"]!, withString: "" )
         }
         
         let hosts = formats["hosts"]!

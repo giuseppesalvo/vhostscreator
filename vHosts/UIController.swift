@@ -59,7 +59,7 @@ class UIController {
     }
     
     //Set styles for all buttons
-    func styleButton( button : NSButton, cornerRadius : CGFloat, borderWidth : CGFloat, background: Bool, whiteText: Bool   ) {
+    func styleButton( button : NSButton, cornerRadius : CGFloat, borderWidth : CGFloat, background: Bool, whiteText: Bool ) {
         
         let pstyle = NSMutableParagraphStyle()
         pstyle.alignment = NSTextAlignment.Center

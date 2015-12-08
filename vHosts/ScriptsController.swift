@@ -9,12 +9,12 @@
 import Cocoa
 import Foundation
 
-class ScriptsController {
+class Scripts {
     
     // This function runs an apple script contains the shell command ( 1... or more )
     // Apple script natively ask you the password, without security framework
     // sudo commands works
-    func run(inScript:[String]) -> Bool {
+    class func run(inScript:[String]) -> Bool {
         
         var script = ""
         for myscript in inScript {
@@ -34,15 +34,28 @@ class ScriptsController {
         }
         
     }
-
+    
+    // This functoin returns terinal command for replace text into a file
+    class func getReplace( search:String, replace:String, pathFile: String ) -> String {
+        let path : NSString = NSString(string: pathFile )
+        let fileContent : NSString? = try? NSString(contentsOfFile: path as String, encoding: NSUTF8StringEncoding)
+        
+        let newcontent = fileContent!
+                    .stringByReplacingOccurrencesOfString( search, withString: replace )
+        
+        let script = " printf '\(newcontent)' > \(pathFile)"
+        
+        return script
+    }
+    
     // This function generate terminal command for append text to a file
-    func getAppend( string: String, pathFile: String ) -> String {
+    class func getAppend( string: String, pathFile: String ) -> String {
         let script = " printf '\(string)' >> \(pathFile)";
         return script
     }
     
     // This function append text to a file
-    func appendStringToFile( string: String, pathFile: String ) -> Bool {
+    class func appendStringToFile( string: String, pathFile: String ) -> Bool {
         let script = " printf '\(string)' >> \(pathFile)";
         return self.run( [ script ] )
     }
