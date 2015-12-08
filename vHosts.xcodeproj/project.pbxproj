@@ -14,8 +14,8 @@
 		5D0E7D941C17039500B59E9B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E7D911C17039500B59E9B /* RealmSwift.framework */; };
 		5D0E7D951C17039500B59E9B /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E7D911C17039500B59E9B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D0E7D981C17049800B59E9B /* VhostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E7D971C17049800B59E9B /* VhostModel.swift */; };
-		9C39DC2B1B4EB3A500ECE139 /* UIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2A1B4EB3A500ECE139 /* UIController.swift */; };
-		9C39DC2D1B4EB42100ECE139 /* ScriptsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2C1B4EB42100ECE139 /* ScriptsController.swift */; };
+		9C39DC2B1B4EB3A500ECE139 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2A1B4EB3A500ECE139 /* UI.swift */; };
+		9C39DC2D1B4EB42100ECE139 /* Scripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2C1B4EB42100ECE139 /* Scripts.swift */; };
 		A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73852DA1B3736D900232331 /* AppDelegate.swift */; };
 		A73852DD1B3736D900232331 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73852DC1B3736D900232331 /* ViewController.swift */; };
 		A73852DF1B3736D900232331 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73852DE1B3736D900232331 /* Images.xcassets */; };
@@ -54,8 +54,8 @@
 		5D0E7D901C17039500B59E9B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		5D0E7D911C17039500B59E9B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		5D0E7D971C17049800B59E9B /* VhostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VhostModel.swift; sourceTree = "<group>"; };
-		9C39DC2A1B4EB3A500ECE139 /* UIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIController.swift; sourceTree = "<group>"; };
-		9C39DC2C1B4EB42100ECE139 /* ScriptsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptsController.swift; sourceTree = "<group>"; };
+		9C39DC2A1B4EB3A500ECE139 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		9C39DC2C1B4EB42100ECE139 /* Scripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripts.swift; sourceTree = "<group>"; };
 		A73852D51B3736D900232331 /* vHosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vHosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A73852D91B3736D900232331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73852DA1B3736D900232331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,12 +88,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D0E7D991C17049D00B59E9B /* RealmModels */ = {
+		5D0E7D991C17049D00B59E9B /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				5D0E7D971C17049800B59E9B /* VhostModel.swift */,
 			);
-			name = RealmModels;
+			name = Database;
+			sourceTree = "<group>";
+		};
+		5DD2F4A31C178A350048913B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9C39DC2A1B4EB3A500ECE139 /* UI.swift */,
+				9C39DC2C1B4EB42100ECE139 /* Scripts.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		A73852CC1B3736D800232331 = {
@@ -119,15 +128,14 @@
 		A73852D71B3736D900232331 /* vHosts */ = {
 			isa = PBXGroup;
 			children = (
-				5D0E7D991C17049D00B59E9B /* RealmModels */,
 				A73852DA1B3736D900232331 /* AppDelegate.swift */,
 				A73852DC1B3736D900232331 /* ViewController.swift */,
 				5D0E7D8C1C16F89600B59E9B /* Command.swift */,
 				5D0E7D8A1C16EB4C00B59E9B /* CustomRow.swift */,
-				9C39DC2C1B4EB42100ECE139 /* ScriptsController.swift */,
-				9C39DC2A1B4EB3A500ECE139 /* UIController.swift */,
-				A73852DE1B3736D900232331 /* Images.xcassets */,
+				5DD2F4A31C178A350048913B /* Utils */,
+				5D0E7D991C17049D00B59E9B /* Database */,
 				A73852E01B3736D900232331 /* Main.storyboard */,
+				A73852DE1B3736D900232331 /* Images.xcassets */,
 				A73852D81B3736D900232331 /* Supporting Files */,
 				A73852F81B375B6A00232331 /* vHosts-Bridging-Header.h */,
 			);
@@ -262,10 +270,10 @@
 			files = (
 				5D0E7D8B1C16EB4C00B59E9B /* CustomRow.swift in Sources */,
 				A73852DD1B3736D900232331 /* ViewController.swift in Sources */,
-				9C39DC2B1B4EB3A500ECE139 /* UIController.swift in Sources */,
+				9C39DC2B1B4EB3A500ECE139 /* UI.swift in Sources */,
 				5D0E7D981C17049800B59E9B /* VhostModel.swift in Sources */,
 				A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */,
-				9C39DC2D1B4EB42100ECE139 /* ScriptsController.swift in Sources */,
+				9C39DC2D1B4EB42100ECE139 /* Scripts.swift in Sources */,
 				5D0E7D8D1C16F89600B59E9B /* Command.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -99,11 +99,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="vHosts" customModuleProvider="target" sceneMemberID="viewController">
                     <customView key="view" id="qTr-6v-agq">
-                        <rect key="frame" x="0.0" y="0.0" width="590" height="297"/>
+                        <rect key="frame" x="0.0" y="0.0" width="521" height="297"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HFR-WS-rgm">
-                                <rect key="frame" x="251" y="202" width="321" height="30"/>
+                                <rect key="frame" x="241" y="202" width="262" height="30"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="left" placeholderString="Server Name" id="88e-3e-R81">
                                     <font key="font" metaFont="fixedUser" size="11"/>
@@ -112,7 +112,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z38-yg-68L">
-                                <rect key="frame" x="251" y="114" width="321" height="30"/>
+                                <rect key="frame" x="241" y="114" width="262" height="30"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="left" placeholderString="Server Admin" id="uSV-Lx-U0O">
                                     <font key="font" metaFont="fixedUser" size="11"/>
@@ -121,7 +121,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j9i-R1-vzi">
-                                <rect key="frame" x="251" y="70" width="217" height="30"/>
+                                <rect key="frame" x="241" y="70" width="175" height="30"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" alignment="left" placeholderString="Write Document Root" id="JsC-0N-Sp4">
                                     <font key="font" metaFont="fixedUser" size="11"/>
@@ -133,7 +133,7 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZnB-gE-eWl">
-                                <rect key="frame" x="229" y="253" width="343" height="24"/>
+                                <rect key="frame" x="229" y="253" width="274" height="24"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="vHosts creator" id="nVW-AX-46B">
                                     <font key="font" size="14" name="Menlo-Regular"/>
@@ -142,7 +142,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UDG-H8-TsF">
-                                <rect key="frame" x="251" y="158" width="321" height="30"/>
+                                <rect key="frame" x="241" y="158" width="262" height="30"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" alignment="left" placeholderString="Port ( default 80 )" id="tuU-CZ-v6m">
                                     <font key="font" metaFont="fixedUser" size="11"/>
@@ -154,9 +154,9 @@
                                 </connections>
                             </textField>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="px2-HL-Z1u">
-                                <rect key="frame" x="474" y="80" width="96" height="23"/>
+                                <rect key="frame" x="422" y="80" width="79" height="23"/>
                                 <animations/>
-                                <buttonCell key="cell" type="squareTextured" title="browse" bezelStyle="texturedSquare" image="F8537E52-4AB6-4730-BC8E-472BF062433D" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="7nS-Qs-buQ">
+                                <buttonCell key="cell" type="squareTextured" title="browse" bezelStyle="texturedSquare" image="3E8A2D95-97B9-49B3-AD39-F079C4B5DE10" imagePosition="below" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="7nS-Qs-buQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="fixedUser" size="11"/>
                                 </buttonCell>
@@ -196,22 +196,22 @@
                                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             <prototypeCellViews>
                                                                 <tableCellView id="WiQ-b6-dRe" customClass="CustomCell" customModule="vHosts" customModuleProvider="target">
-                                                                    <rect key="frame" x="1" y="1" width="220" height="48"/>
+                                                                    <rect key="frame" x="1" y="1" width="219.89091094382775" height="48"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
                                                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hr6-cb-Cru">
                                                                             <rect key="frame" x="17" y="16" width="200" height="17"/>
                                                                             <animations/>
                                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" drawsBackground="YES" id="eco-qg-7ZN">
-                                                                                <font key="font" metaFont="system"/>
+                                                                                <font key="font" metaFont="fixedUser" size="11"/>
                                                                                 <color key="textColor" red="0.98294022417527416" green="0.95793593565115442" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
                                                                             </textFieldCell>
                                                                         </textField>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhE-K7-iZu">
-                                                                            <rect key="frame" x="182" y="25" width="35" height="16"/>
+                                                                            <rect key="frame" x="178" y="18" width="18" height="12"/>
                                                                             <animations/>
-                                                                            <buttonCell key="cell" type="bevel" title="edit" bezelStyle="regularSquare" alignment="right" imageScaling="proportionallyDown" inset="2" id="l1q-zt-toL">
+                                                                            <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="edit2" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="l1q-zt-toL">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                 <font key="font" size="10" name="Menlo-Regular"/>
                                                                             </buttonCell>
@@ -220,9 +220,9 @@
                                                                             </connections>
                                                                         </button>
                                                                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSa-Js-q2C">
-                                                                            <rect key="frame" x="170" y="8" width="47" height="16"/>
+                                                                            <rect key="frame" x="198" y="17" width="16" height="13"/>
                                                                             <animations/>
-                                                                            <buttonCell key="cell" type="bevel" title="delete" bezelStyle="rounded" alignment="right" imageScaling="proportionallyDown" inset="2" id="CL0-Wh-yGM">
+                                                                            <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="delete" imagePosition="above" alignment="center" imageScaling="proportionallyDown" inset="2" id="CL0-Wh-yGM">
                                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                 <font key="font" size="10" name="Menlo-Regular"/>
                                                                             </buttonCell>
@@ -266,9 +266,9 @@
                                 <animations/>
                             </visualEffectView>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTr-5a-ry6">
-                                <rect key="frame" x="346" y="20" width="109" height="32"/>
+                                <rect key="frame" x="243" y="20" width="258" height="30"/>
                                 <animations/>
-                                <buttonCell key="cell" type="squareTextured" title="Create" bezelStyle="texturedSquare" image="77F91044-E060-4306-BCE8-AC17EA4A4197" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="be4-vD-1Wr">
+                                <buttonCell key="cell" type="squareTextured" title="CREATE" bezelStyle="texturedSquare" image="D8F10E96-CD44-4F96-8C46-F27EA8F1F131" imagePosition="below" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="be4-vD-1Wr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="fixedUser" size="11"/>
                                 </buttonCell>
@@ -292,11 +292,11 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="511" y="801.5"/>
+            <point key="canvasLocation" x="476.5" y="801.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="77F91044-E060-4306-BCE8-AC17EA4A4197" width="1" height="1">
+        <image name="3E8A2D95-97B9-49B3-AD39-F079C4B5DE10" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -346,7 +346,7 @@ AKkAqwCwALMAtQC3ALkAuwDAANcA2QDbCVMJWAljCWwJfwmDCY4JlwmcCaQJpwmsCbsJvwnGCc4J2wng
 CeIJ5AnpCfEJ9An5CgEKBAoWChkKHgAAAAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAogA
 </mutableData>
         </image>
-        <image name="F8537E52-4AB6-4730-BC8E-472BF062433D" width="1" height="1">
+        <image name="D8F10E96-CD44-4F96-8C46-F27EA8F1F131" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -396,5 +396,7 @@ AKkAqwCwALMAtQC3ALkAuwDAANcA2QDbCVMJWAljCWwJfwmDCY4JlwmcCaQJpwmsCbsJvwnGCc4J2wng
 CeIJ5AnpCfEJ9An5CgEKBAoWChkKHgAAAAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAogA
 </mutableData>
         </image>
+        <image name="delete" width="128" height="128"/>
+        <image name="edit2" width="128" height="128"/>
     </resources>
 </document>

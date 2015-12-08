@@ -40,7 +40,7 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
         super.viewDidLoad()
         
         UI.styleButton(btnCreate, cornerRadius: 4, borderWidth: 0, background: true, whiteText: true)
-        UI.styleButton(browseDirBtn, cornerRadius: browseDirBtn.frame.size.height/2, borderWidth: 1, background: false, whiteText: false)
+        UI.styleButton(browseDirBtn, cornerRadius: 4, borderWidth: 1, background: false, whiteText: false)
         UI.text( serverName, serverAdmin, documentRootLabel, portText )
     }
     
@@ -162,19 +162,21 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
         
         let current = VHost.get( cell.title.stringValue )
         
-        serverName.stringValue = current.servername
-        serverAdmin.stringValue = current.serveradmin
+        serverName.stringValue        = current.servername
+        serverAdmin.stringValue       = current.serveradmin
         documentRootLabel.stringValue = current.documentroot
-        portText.stringValue = current.port
+        portText.stringValue          = current.port
     }
     
     func tableViewRowDelete( cell: CustomCell ) {
+        
         if VHost.delete( cell.title.stringValue ) {
             reloadTable()
             UI.popup("Success", text: "Virtual Host deleted" )
         } else {
             UI.popup("Error", text: "Error while deleting Virtual Host" )
         }
+    
     }
     
     func tableView(tableView: NSTableView, objectValueForTableColumn tableColumn: NSTableColumn?, row: Int) -> AnyObject?
