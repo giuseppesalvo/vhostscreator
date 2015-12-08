@@ -14,7 +14,7 @@ class ScriptsController {
     // This function runs an apple script contains the shell command ( 1... or more )
     // Apple script natively ask you the password, without security framework
     // sudo commands works
-    func run(inScript:String...) -> Bool {
+    func run(inScript:[String]) -> Bool {
         
         var script = ""
         for myscript in inScript {
@@ -44,7 +44,7 @@ class ScriptsController {
     // This function append text to a file
     func appendStringToFile( string: String, pathFile: String ) -> Bool {
         let script = " printf '\(string)' >> \(pathFile)";
-        return self.run( script )
+        return self.run( [ script ] )
     }
 
 }

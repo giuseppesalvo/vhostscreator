@@ -156,7 +156,7 @@
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="px2-HL-Z1u">
                                 <rect key="frame" x="474" y="80" width="96" height="23"/>
                                 <animations/>
-                                <buttonCell key="cell" type="squareTextured" title="browse" bezelStyle="texturedSquare" image="C605BA13-F428-4A3D-93C5-9C088CF0D8E9" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="7nS-Qs-buQ">
+                                <buttonCell key="cell" type="squareTextured" title="browse" bezelStyle="texturedSquare" image="D97D5863-BD6C-40F4-8084-47B41F088D2E" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="7nS-Qs-buQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="fixedUser" size="11"/>
                                 </buttonCell>
@@ -228,7 +228,7 @@
                                         </clipView>
                                         <animations/>
                                         <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="H2C-w9-1sa">
-                                            <rect key="frame" x="0.0" y="376" width="223" height="16"/>
+                                            <rect key="frame" x="0.0" y="-16" width="0.0" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </scroller>
@@ -244,7 +244,7 @@
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTr-5a-ry6">
                                 <rect key="frame" x="346" y="20" width="109" height="32"/>
                                 <animations/>
-                                <buttonCell key="cell" type="squareTextured" title="Create" bezelStyle="texturedSquare" image="A8E6C14E-B3E7-4C96-9E03-5DD76ACE5C61" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="be4-vD-1Wr">
+                                <buttonCell key="cell" type="squareTextured" title="Create" bezelStyle="texturedSquare" image="B59F32D1-A3E7-4704-8D80-75A968A26B87" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="be4-vD-1Wr">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="fixedUser" size="11"/>
                                 </buttonCell>
@@ -272,7 +272,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A8E6C14E-B3E7-4C96-9E03-5DD76ACE5C61" width="1" height="1">
+        <image name="B59F32D1-A3E7-4704-8D80-75A968A26B87" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -322,7 +322,7 @@ AKkAqwCwALMAtQC3ALkAuwDAANcA2QDbCVMJWAljCWwJfwmDCY4JlwmcCaQJpwmsCbsJvwnGCc4J2wng
 CeIJ5AnpCfEJ9An5CgEKBAoWChkKHgAAAAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAogA
 </mutableData>
         </image>
-        <image name="C605BA13-F428-4A3D-93C5-9C088CF0D8E9" width="1" height="1">
+        <image name="D97D5863-BD6C-40F4-8084-47B41F088D2E" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

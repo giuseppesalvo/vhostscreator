@@ -29,13 +29,9 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
     
     @IBOutlet var HostsTableView: NSTableView!
     
-    // Paths of file
-    let hostsFile  = "/etc/hosts"
-    let vhostsFile = "/etc/apache2/extra/httpd-vhosts.conf"
-    
     // Classes
     let UI = UIController()
-    let Scripts   = ScriptsController()
+    let Scripts = ScriptsController()
     
     
     // - - - - - - - - - - - - -
@@ -66,23 +62,32 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
     // MARK: browseDirectory
     // - - - - - - - - - - - - -
     
+    var NSPanelOpened : Bool = false
+    
     @IBAction func browseDirectory(sender: AnyObject) {
         
-        let openPanel = NSOpenPanel()
+        if !self.NSPanelOpened {
+            
+            self.NSPanelOpened = true
         
-        openPanel.allowsMultipleSelection  = false
-        openPanel.canChooseDirectories     = true
-        openPanel.canCreateDirectories     = true
-        openPanel.canChooseFiles           = false
+            let openPanel = NSOpenPanel()
         
-        openPanel.beginWithCompletionHandler { (result) -> Void in
-            if result == NSFileHandlingPanelOKButton {
+            openPanel.allowsMultipleSelection  = false
+            openPanel.canChooseDirectories     = true
+            openPanel.canCreateDirectories     = true
+            openPanel.canChooseFiles           = false
         
-                let url = openPanel.URL?.path
+            openPanel.beginWithCompletionHandler { (result) -> Void in
+                if result == NSFileHandlingPanelOKButton {
+                    
+                    let url = openPanel.URL?.path
                 
-                self.documentRootLabel.stringValue = url!
+                    self.documentRootLabel.stringValue = url!
+                }
                 
+                self.NSPanelOpened = false
             }
+            
         }
         
     }
@@ -96,35 +101,28 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
         let name  = serverName.stringValue.lowercaseString
         let admin = serverAdmin.stringValue.lowercaseString
         let root  = documentRootLabel.stringValue
+        let port  = portText.stringValue
         
         if name != "" && admin != "" && root != ""
         {
+        
+            let command = Command.get( name , serveradmin: admin, documentroot: root, port: port )
             
-            var port = ""
+            let scripts = [
+                Scripts.getAppend(command["vhost"]!, pathFile: Command.paths["vhosts"]!),
+                Scripts.getAppend(command["host"]! , pathFile: Command.paths["hosts"]!),
+                "apachectl restart"
+            ]
             
-            if portText.stringValue != "" && portText.stringValue != "80" {
-                port = String( portText.integerValue )
-                port = "\n\tProxyPreserveHost On\n\tProxyPass / http://localhost:\(port)/\n\tProxyPassReverse / http://localhost:\(port)/\n\n"
-            }
-            
-            
-            let vhost : String = "\n\n# \(name.uppercaseString)\n<VirtualHost *:80>\n\tServerAdmin \(admin)\n\tDocumentRoot '\(root)'\n\tServerName \(name)\n\tServerAlias www.\(name)\n\tErrorLog '/private/var/log/apache2/\(name)-error_log'\n\tCustomLog '/private/var/log/apache2/\(name)-access_log' comm$\n\(port)</VirtualHost>"
-            let hosts = "\n\n# \(name.uppercaseString)\n127.0.0.1\t\(name) www.\(name)"
-            
-            if Scripts.run( Scripts.getAppend(vhost, pathFile: vhostsFile),
-                            Scripts.getAppend(hosts, pathFile: hostsFile),
-                            "apachectl restart" )
-            {
+            if Scripts.run( scripts ) {
                 UI.popup("Success", text: "Virtual host created")
             }
-            else
-            {
+            else {
                  UI.popup( "Error", text: "Error while creating virtual host" )
             }
         
         }
-        else
-        {
+        else {
             UI.popup("Error", text: "There are empty fields!")
         }
     }
