@@ -44,7 +44,7 @@ class InterfaceController {
             b.wantsLayer = true
             
             let pstyle = NSMutableParagraphStyle()
-            pstyle.alignment = .CenterTextAlignment
+            pstyle.alignment = NSTextAlignment.Center
             
             let font = NSFont( name: currentFont, size: fontSize )
             

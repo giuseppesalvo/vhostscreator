@@ -53,7 +53,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
         super.viewDidAppear()
         
         //Get current window
-        var window : NSWindow? = self.view.window
+        let window : NSWindow? = self.view.window
         Interface.window( window! )
     }
     
@@ -64,7 +64,7 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     
     @IBAction func browseDirectory(sender: AnyObject) {
         
-        var openPanel = NSOpenPanel()
+        let openPanel = NSOpenPanel()
         
         openPanel.allowsMultipleSelection  = false
         openPanel.canChooseDirectories     = true
@@ -89,9 +89,9 @@ class ViewController: NSViewController, NSTextFieldDelegate {
     // - - - - - - - - - - - - -
     @IBAction func buttonAction(sender: AnyObject) {
         
-        var name  = serverName.stringValue.lowercaseString
-        var admin = serverAdmin.stringValue.lowercaseString
-        var root  = documentRootLabel.stringValue
+        let name  = serverName.stringValue.lowercaseString
+        let admin = serverAdmin.stringValue.lowercaseString
+        let root  = documentRootLabel.stringValue
         
         if name != "" && admin != "" && root != ""
         {

@@ -1,9 +1,9 @@
 //
-//  AppleScript.swift
-//  vHosts
+//  ScriptsHelper.swift
 //
-//  Created by Ampelio on 09/07/15.
+//  Created by Giuseppe Salvo on 09/07/15.
 //  Copyright (c) 2015 Giuseppe Salvo. All rights reserved.
+//  giuseppesalvo@outlook.it
 //
 
 import Cocoa
@@ -11,9 +11,9 @@ import Foundation
 
 class ScriptsController {
     
-    // Questa funzione lancia un apple script contenente il comando da eseguire nella console.
-    // Il comando viene lanciato attraverso apple script perchè chiede in automatico i privilegi
-    // senza il bisogno di inserire secureframework
+    // This function runs an apple script contains the shell command ( 1... or more )
+    // Apple script natively ask you the password, without security framework
+    // sudo commands works
     func run(inScript:String...) -> Bool {
         
         var script = ""
@@ -21,25 +21,29 @@ class ScriptsController {
             script += "do shell script \"\(myscript)\" with administrator privileges\n"
         }
         
-        var appleScript = NSAppleScript(source: script)
-        var eventResult = appleScript!.executeAndReturnError(nil)
+        let appleScript = NSAppleScript(source: script)
         
-        if eventResult == nil {
+        let result = appleScript!.executeAndReturnError( nil ) as NSAppleEventDescriptor
+        
+        //print( result.description )
+        
+        if result.description == "" {
             return false
         } else {
             return true
         }
+        
     }
 
     // This function generate terminal command for append text to a file
     func getAppend( string: String, pathFile: String ) -> String {
-        var script = " printf '\(string)' >> \(pathFile)";
+        let script = " printf '\(string)' >> \(pathFile)";
         return script
     }
     
     // This function append text to a file
     func appendStringToFile( string: String, pathFile: String ) -> Bool {
-        var script = " printf '\(string)' >> \(pathFile)";
+        let script = " printf '\(string)' >> \(pathFile)";
         return self.run( script )
     }
 
