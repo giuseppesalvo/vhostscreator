@@ -103,9 +103,8 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
         let root  = documentRootLabel.stringValue
         let port  = portText.stringValue
         
-        if name != "" && admin != "" && root != ""
-        {
-        
+        if name != "" && admin != "" && root != "" {
+            
             let command = Command.get( name , serveradmin: admin, documentroot: root, port: port )
             
             let scripts = [
@@ -133,8 +132,7 @@ class ViewController: NSViewController, NSTextFieldDelegate, NSTableViewDelegate
     
     let tableArray:[String] = [ "Hi", "Hello", "Ciao" ]
     
-    func numberOfRowsInTableView(aTableView: NSTableView) -> Int
-    {
+    func numberOfRowsInTableView(aTableView: NSTableView) -> Int {
         let numberOfRows : Int = self.tableArray.count
         return numberOfRows
     }
