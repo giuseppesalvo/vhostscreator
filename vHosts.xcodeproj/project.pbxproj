@@ -14,6 +14,7 @@
 		5D0E7D941C17039500B59E9B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E7D911C17039500B59E9B /* RealmSwift.framework */; };
 		5D0E7D951C17039500B59E9B /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0E7D911C17039500B59E9B /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D0E7D981C17049800B59E9B /* VhostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0E7D971C17049800B59E9B /* VhostModel.swift */; };
+		5D18515E1C1C39F00070A834 /* RealmSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D18515D1C1C39F00070A834 /* RealmSingleton.swift */; };
 		9C39DC2B1B4EB3A500ECE139 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2A1B4EB3A500ECE139 /* UI.swift */; };
 		9C39DC2D1B4EB42100ECE139 /* Scripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39DC2C1B4EB42100ECE139 /* Scripts.swift */; };
 		A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73852DA1B3736D900232331 /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		5D0E7D901C17039500B59E9B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		5D0E7D911C17039500B59E9B /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		5D0E7D971C17049800B59E9B /* VhostModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VhostModel.swift; sourceTree = "<group>"; };
+		5D18515D1C1C39F00070A834 /* RealmSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSingleton.swift; sourceTree = "<group>"; };
 		9C39DC2A1B4EB3A500ECE139 /* UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		9C39DC2C1B4EB42100ECE139 /* Scripts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripts.swift; sourceTree = "<group>"; };
 		A73852D51B3736D900232331 /* vHosts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vHosts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				5D0E7D971C17049800B59E9B /* VhostModel.swift */,
+				5D18515D1C1C39F00070A834 /* RealmSingleton.swift */,
 			);
 			name = Database;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				5D0E7D8B1C16EB4C00B59E9B /* CustomRow.swift in Sources */,
 				A73852DD1B3736D900232331 /* ViewController.swift in Sources */,
 				9C39DC2B1B4EB3A500ECE139 /* UI.swift in Sources */,
+				5D18515E1C1C39F00070A834 /* RealmSingleton.swift in Sources */,
 				5D0E7D981C17049800B59E9B /* VhostModel.swift in Sources */,
 				A73852DB1B3736D900232331 /* AppDelegate.swift in Sources */,
 				9C39DC2D1B4EB42100ECE139 /* Scripts.swift in Sources */,

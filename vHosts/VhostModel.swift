@@ -27,7 +27,7 @@ class VHost {
     //
     class func all () -> Results<VHostModel> {
         
-        let realm = try! Realm()
+        let realm = RealmSingleton.get
         
         return realm.objects( VHostModel )
     }
@@ -37,7 +37,7 @@ class VHost {
     //
     class func add ( servername:String, serveradmin: String, documentroot:String, port: String, vhostText:String, hostText:String ) -> Bool {
         
-        let realm = try! Realm()
+        let realm = RealmSingleton.get
         
         let scripts = [
             Scripts.getAppend(vhostText, pathFile: Command.paths["vhosts"]!),
@@ -71,7 +71,7 @@ class VHost {
     //
     class func addOrUpdate ( servername:String, serveradmin: String, documentroot:String, port: String, vhostText:String, hostText:String ) -> Bool {
         
-        let realm = try! Realm()
+        let realm = RealmSingleton.get
         
         let search = realm.objects(VHostModel).filter("servername = '\(servername)'")
         
@@ -113,7 +113,7 @@ class VHost {
     
     class func get( servername: String ) -> VHostModel {
         
-        let realm = try! Realm()
+        let realm = RealmSingleton.get
         
         let current = realm.objects(VHostModel).filter("servername = '\(servername)'")[0]
      
@@ -128,7 +128,7 @@ class VHost {
     
     class func delete ( servername:String ) -> Bool {
         
-        let realm = try! Realm()
+        let realm = RealmSingleton.get
         
         let current = realm.objects(VHostModel).filter("servername = '\(servername)'")[0]
         
