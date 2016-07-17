@@ -7,7 +7,7 @@ Mac utility for easy and fast apache virtual hosts creation
 
 ## How it works
 
-The utility generate: 
+The utility generates: 
 
 **in file /etc/apache2/extra/httpd-vhosts.conf**
 
